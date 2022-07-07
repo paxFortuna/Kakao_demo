@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:kakao_demo/cmomponents/car_data.dart';
+import 'package:kakao_demo/components/car_data.dart';
 
 final dummyItems =[
   "assets/images/ta_01.png",
@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: const [
             CarData(name: '도쿄'),
-            CarData(name: '모범'),
+            CarData(name: '서울'),
             CarData(name: '불량'),
             Opacity(
               opacity: 0.0,
