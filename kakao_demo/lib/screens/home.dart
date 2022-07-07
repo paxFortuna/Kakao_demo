@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
           children: const [
             CarData(name: '도쿄'),
             CarData(name: '서울'),
-            CarData(name: '불량'),
+            CarData(name: '시골'),
             Opacity(
               opacity: 0.0,
               child: CarData(name: '모범'),
