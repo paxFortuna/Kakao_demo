@@ -17,16 +17,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const SizedBox(
+        Container(
           height: 20,
+          color: Colors.white,
         ),
         _buildTop(),
-        const SizedBox(
+        Container(
           height: 20,
+          color: Colors.white,
         ),
          _buildMiddle(),
-        const SizedBox(
+        Container(
           height: 20,
+          color: Colors.white,
         ),
         _buildBottom(),
       ],
@@ -57,6 +60,7 @@ class HomeScreen extends StatelessWidget {
               },
               child: const CarData(name: '뉴욕'),
             ),
+    ],
         ),
         const SizedBox(
           height: 20,
