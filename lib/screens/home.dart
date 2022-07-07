@@ -2,11 +2,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 final dummyItems =[
-  "kakao_demo/assets/imgs/chat_on.png",
-  "kakao_demo/assets/imgs/home_off.png",
-  "kakao_demo/assets/imgs/home_on.png",
-  "kakao_demo/assets/imgs/location_off.png",
-  "kakao_demo/assets/imgs/note_on.png",
+  "assets/images/ta_01.png",
+  "assets/images/ta_02.png",
+  "/assets/images/ta_03.png",
+  "/assets/images/location_off.png",
+  "/assets/images/note_on.png",
 ];
 
 class HomeScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        _buildMiddle(),
+         _buildMiddle(),
         const SizedBox(
           height: 20,
         ),
@@ -139,7 +139,6 @@ Widget _buildMiddle() {
   return CarouselSlider(
       options: CarouselOptions(
         height: 200,
-        aspectRatio: 16/9,
         autoPlay: false,
       ),
     items: dummyItems.map((img){
@@ -150,7 +149,7 @@ Widget _buildMiddle() {
           child: ClipRect(
               child: Image.asset(
                 img,
-                fit: BoxFit.fill,
+                fit: BoxFit.contain,
              ),
            ),
         );
