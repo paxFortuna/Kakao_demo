@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildTop() {
     return Builder(
-      builder: (BuildContext context) {
+      builder: (BuildContext navContext) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           child: Column(
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                        context,
+                        navContext,
                         MaterialPageRoute(
                             builder: (context) => const ServiceScreen()),
                       );
