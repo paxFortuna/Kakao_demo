@@ -106,7 +106,7 @@ Widget _buildMiddle() {
             borderRadius: BorderRadius.circular(20),
               child: Image.asset(
                 img,
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.fill,
               ),
            ),
         );

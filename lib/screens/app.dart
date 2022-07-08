@@ -56,15 +56,15 @@ class _AppState extends State<App> {
             activeIcon: Icon(Icons.assignment_ind_outlined),
           ),
           BottomNavigationBarItem(
-            label: "이용정보",
             icon: Icon(Icons.account_circle),
             activeIcon: Icon(Icons.access_alarm_outlined),
+            label: "이용정보",
           ),
         ],
-
       ),
     );
   }
+
 
   Widget _bodyWidget() {
     switch (_currentPageIndex) {

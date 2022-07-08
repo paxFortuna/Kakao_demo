@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kakao_demo/screens/home.dart';
 
 class ServiceScreen extends StatelessWidget {
   const ServiceScreen({Key? key}) : super(key: key);
