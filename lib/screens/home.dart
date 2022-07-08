@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:kakao_demo/components/car_data.dart';
 
 final dummyItems =[
-  "assets/images/ta_01.png",
-  "assets/images/ta_02.png",
-  "assets/images/ta_03.png",
+  "assets/images/home_off.png",
+  "assets/images/note_on.png",
+  "assets/images/wheel.png",
   "assets/images/location_off.png",
   "assets/images/note_on.png",
 ];
@@ -94,17 +94,18 @@ Widget _buildMiddle() {
   return CarouselSlider(
       options: CarouselOptions(
         height: 200,
-        autoPlay: false,
+        autoPlay: true,
       ),
-    items: dummyItems.map((i){
+    items: dummyItems.map((img){
       return Builder(builder: (BuildContext context){
         return Container(
-          width: MediaQuery.of(context).size.width,
+          width: MediaQuery.of(context).size.width * 0.8 ,
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
-          child: ClipRect(
-              child: Image(
-                image: AssetImage(i),
-                fit: BoxFit.cover,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                img,
+                fit: BoxFit.fitHeight,
               ),
            ),
         );
