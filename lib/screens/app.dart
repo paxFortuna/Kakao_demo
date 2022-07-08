@@ -27,8 +27,12 @@ class _AppState extends State<App> {
         title: const Text("Kakao Demo"),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: () {},
-              icon: const Icon(Icons.add, color: Colors.redAccent)),
+          Padding(
+            padding: const EdgeInsets.only(right: 30.0),
+            child: IconButton(onPressed: () {},
+                icon: const Icon(Icons.search_rounded, color: Colors.redAccent, size: 20,)
+            ),
+          ),
         ],
       ),
       body: _bodyWidget(),

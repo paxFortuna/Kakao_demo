@@ -99,10 +99,11 @@ Widget _buildMiddle() {
     items: dummyItems.map((img){
       return Builder(builder: (BuildContext context){
         return Container(
+          color: Colors.purpleAccent,
           width: MediaQuery.of(context).size.width * 0.8 ,
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(20),
               child: Image.asset(
                 img,
                 fit: BoxFit.fitHeight,
