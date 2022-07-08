@@ -1,12 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:kakao_demo/components/car_data.dart';
 
 final dummyItems =[
   "assets/images/ta_01.png",
   "assets/images/ta_02.png",
-  "/assets/images/ta_03.png",
-  "/assets/images/location_off.png",
-  "/assets/images/note_on.png",
+  "assets/images/ta_03.png",
+  "assets/images/location_off.png",
+  "assets/images/note_on.png",
 ];
 
 class HomeScreen extends StatelessWidget {
@@ -16,16 +17,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const SizedBox(
-          height: 20,
+        Container(
+          height: 10,
+          color: Colors.black26,
         ),
         _buildTop(),
-        const SizedBox(
-          height: 20,
+        Container(
+          height: 10,
+          color: Colors.black26,
         ),
          _buildMiddle(),
-        const SizedBox(
-          height: 20,
+        Container(
+          height: 10,
+          color: Colors.black26,
         ),
         _buildBottom(),
       ],
@@ -33,105 +37,56 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildTop() {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            GestureDetector(
-              onTap: () {
-                print("호출");
-              },
-              child: Column(
-                children: const [
-                  Icon(Icons.local_taxi, color: Colors.white, size: 40),
-                  Text(
-                    "택시",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  print("호출");
+                },
+                child: const CarData(name: '일반'),
               ),
-            ),
-            GestureDetector(
-              onTap: () {
-                print("호출");
-              },
-              child: Column(
-                children: const [
-                  Icon(Icons.local_taxi, color: Colors.white, size: 40),
-                  Text(
-                    "대리",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
+              GestureDetector(
+                onTap: () {
+                  print("호출");
+                },
+                child: const CarData(name: '럭셔리'),
               ),
-            ),
-            GestureDetector(
-              onTap: () {
-                print("호출");
-              },
-              child: Column(
-                children: const [
-                  Icon(Icons.local_taxi, color: Colors.white, size: 40),
-                  Text("모범", style: TextStyle(color: Colors.white)),
-                ],
+              GestureDetector(
+                onTap: () {
+                  print("호출");
+                },
+                child: const CarData(name: '뉴욕'),
               ),
-            ),
-            GestureDetector(
-              onTap: (){
-                print("호출");
-              },
-              child: Column(
-                children: const [
-                  Icon(Icons.local_taxi, color: Colors.white, size: 40),
-                  Text("블랙", style: TextStyle(color: Colors.white)),
-                ],
+              GestureDetector(
+                onTap: () {
+                  print("호출");
+                },
+                child: const CarData(name: '부산'),
               ),
-            )
-          ],
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: const [
-                Icon(Icons.local_taxi, color: Colors.white, size: 40),
-                Text(
-                  "승합",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-            Column(
-              children: const [
-                Icon(Icons.local_taxi, color: Colors.white, size: 40),
-                Text(
-                  "미니",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-            Column(
-              children: const [
-                Icon(Icons.local_taxi, color: Colors.white, size: 40),
-                Text("우버", style: TextStyle(color: Colors.white)),
-              ],
-            ),
-            Opacity(
-              opacity: 0.0,
-              child: Column(
-                children: const [
-                  Icon(Icons.local_taxi, color: Colors.white, size: 40),
-                  Text("택시", style: TextStyle(color: Colors.white)),
-                ],
-              ),
-            )
-          ],
-        ),
       ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              CarData(name: '도쿄'),
+              CarData(name: '서울'),
+              CarData(name: '시골'),
+              Opacity(
+                opacity: 0.0,
+                child: CarData(name: '모범'),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 
@@ -141,16 +96,16 @@ Widget _buildMiddle() {
         height: 200,
         autoPlay: false,
       ),
-    items: dummyItems.map((img){
+    items: dummyItems.map((i){
       return Builder(builder: (BuildContext context){
         return Container(
           width: MediaQuery.of(context).size.width,
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
           child: ClipRect(
-              child: Image.asset(
-                img,
-                fit: BoxFit.contain,
-             ),
+              child: Image(
+                image: AssetImage(i),
+                fit: BoxFit.cover,
+              ),
            ),
         );
         },
@@ -166,6 +121,7 @@ Widget _buildBottom() {
     ),
     );
     return ListView(
+      padding: const EdgeInsets.all(20),
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
         children: items,
